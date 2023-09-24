@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#dont touch unless youre modifying the actual payload for mac/linux
+
 while getopts ":I:P:" opt; do
   case $opt in
     I) IP_ADDRESS="$OPTARG"
